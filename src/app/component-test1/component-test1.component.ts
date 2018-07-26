@@ -30,22 +30,22 @@ import {Component, OnInit} from '@angular/core';@Component({selector: 'app-compo
 
 TextName:string ='';
 TextDifferent:string='';
-Resault:Number=0;
+Result:Number=0;
 ShowRes:boolean=false;
 Mosavi(t1,t2,ob){
   t1=Number(t1);
   t2=Number(t2);
   if (ob=='+') {
-    this.Resault=t1+t2;
+    this.Result=t1+t2;
   }
   else if (ob=='-') {
-    this.Resault=t1-t2;
+    this.Result=t1-t2;
   }
   else if (ob=='*') {
-    this.Resault=t1*t2;
+    this.Result=t1*t2;
   }
   else if (ob=='/') {
-    this.Resault=t1/t2;
+    this.Result=t1/t2;
   }
   this.ShowRes=true;
 }
@@ -53,6 +53,11 @@ Mosavi(t1,t2,ob){
 Taghir(){
   this.ShowRes=false;
 }
+
+
+red:Number=0;
+green:Number=0;
+blue:Number=0;
   constructor() {}
     ngOnInit() {}
 }
