@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
  import {FormsModule} from '@angular/forms'
 
 import { AppComponent } from './app.component';
-import { ComponentTest1Component } from './component-test1/component-test1.component';
+import { ComponentTest1Component } from './Components/component-test1/component-test1.component';
 
 @NgModule({
   declarations: [

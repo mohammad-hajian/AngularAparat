@@ -45,7 +45,7 @@
 <br>
 
 <div>
-  <input type="text" placeholder="Typeing ..." [(ngModel)]="TextDifferent" (input)="Taghir()">
+  <input type="text" placeholder="Typeing ..." [(ngModel)]="TextDifferent" (input)="InputNumber()">
   <span [ngSwitch]="TextDifferent">
     <p *ngSwitchCase="'jam'">
       <input type="number" placeholder="number1" value="0" #v1>
@@ -104,6 +104,21 @@
   <br> {{'Your color is : rgb('+red+','+green+','+blue+')'}}
 
   <div id="color1" [ngStyle]="{background:'rgb('+red+','+green+','+blue+')'}">
-      
+
   </div>
+</div>
+
+<br>
+<hr>
+<br>
+
+<div>
+  <ul *ngFor="let Object of Objects; let i=index">
+    <li>
+      {{Object.Id+' And '+Object.Name+' And '+Object.Family+' '}}{{i+1}}
+    </li>
+  </ul>
+  <li *ngFor="let Object of Objects; let i=index">
+    {{Object.Id+' And '+Object.Name+' And '+Object.Family+' '}}{{i+1}}
+  </li>
 </div>
