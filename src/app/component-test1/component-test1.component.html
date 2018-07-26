@@ -1,3 +1,44 @@
-<p>
-  component-test1 works!
-</p>
+<h2>
+  <a [class]="Is_Ok ? 'green' : 'red'" href="http://google.com" target="_blank">Google</a>
+</h2>
+<hr>
+<button (click)="OnClick()">Button1</button>
+<h2>{{Message}}</h2>
+<hr>
+
+<button (mouseenter)="MouseEnter()" (mouseleave)="MouseLeave()">Button2</button>
+<h2>
+  {{Mouse}}
+</h2>
+
+<br>
+<hr>
+<br>
+
+<input [class]="ClassText" type="text" placeholder="Typing..." (focus)="OnFocus()" (blur)="Onblur()">
+
+<br>
+<hr>
+<br>
+
+<input type="text" placeholder="Typing..." [(ngModel)]="TextName">
+<br>
+<ng-container *ngIf="TextName=='plus'; then Block1; else Block2"></ng-container>
+<ng-template #Block1>
+    <input type="number" placeholder="number1">
+    <span>+</span>
+    <input type="number" placeholder="number2">
+    <br>
+    <button>=</button>
+</ng-template>
+<ng-template #Block2>
+  <h2>please enter "plus" in textbox</h2>
+</ng-template>
+<h2>
+  {{'in textbox typed : '+TextName}}
+</h2>
+
+<br>
+<hr>
+<br>
+
