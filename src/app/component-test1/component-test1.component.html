@@ -21,24 +21,69 @@
 <hr>
 <br>
 
-<input type="text" placeholder="Typing..." [(ngModel)]="TextName">
-<br>
-<ng-container *ngIf="TextName=='plus'; then Block1; else Block2"></ng-container>
-<ng-template #Block1>
+<div>
+  <input type="text" [(ngModel)]="TextName" placeholder="Typeing ...">
+  <br>
+  <ng-container *ngIf="TextName=='plus'; then Block1; else Block2"></ng-container>
+  <ng-template #Block1>
     <input type="number" placeholder="number1">
     <span>+</span>
     <input type="number" placeholder="number2">
     <br>
     <button>=</button>
-</ng-template>
-<ng-template #Block2>
-  <h2>please enter "plus" in textbox</h2>
-</ng-template>
-<h2>
-  {{'in textbox typed : '+TextName}}
-</h2>
+  </ng-template>
+  <ng-template #Block2>
+    <h2>please enter "plus" in textbox</h2>
+  </ng-template>
+  <h2>
+    {{'in textbox typed : '+TextName}}
+  </h2>
+</div>
 
 <br>
 <hr>
 <br>
 
+<div>
+  <input type="text" placeholder="Typeing ..." [(ngModel)]="TextDifferent" (input)="Taghir()">
+  <span [ngSwitch]="TextDifferent">
+    <p *ngSwitchCase="'jam'">
+      <input type="number" placeholder="number1" value="0" #v1>
+      <span>+</span>
+      <input type="number" placeholder="number2" value="0" #v2>
+      <br>
+      <button (click)="Mosavi(v1.value,v2.value,'+')">=</button>
+    </p>
+    <p *ngSwitchCase="'tafrigh'">
+      <input type="number" placeholder="number1" value="0" #v1>
+      <span>-</span>
+      <input type="number" placeholder="number2" value="0" #v2>
+      <br>
+      <button (click)="Mosavi(v1.value,v2.value,'-')">=</button>
+    </p>
+    <p *ngSwitchCase="'zarb'">
+      <input type="number" placeholder="number1" value="0" #v1>
+      <span>*</span>
+      <input type="number" placeholder="number2" value="0" #v2>
+      <br>
+      <button (click)="Mosavi(v1.value,v2.value,'*')">=</button>
+    </p>
+    <p *ngSwitchCase="'taghsim'">
+      <input type="number" placeholder="number1" value="0" #v1>
+      <span>/</span>
+      <input type="number" placeholder="number2" value="0" #v2>
+      <br>
+      <button (click)="Mosavi(v1.value,v2.value,'/')">=</button>
+    </p>
+    <h2 *ngSwitchDefault>
+      please enter "jam" or "tafrigh" or "zarb" or "taghsim" in textbox.
+    </h2>
+
+    <h1 *ngIf="ShowRes">
+      Resault is : {{Resault}}
+    </h1>
+  </span>
+  <h2>
+    {{'in textbox typed : '+TextDifferent}}
+  </h2>
+</div>

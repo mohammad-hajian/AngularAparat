@@ -28,8 +28,31 @@ import {Component, OnInit} from '@angular/core';@Component({selector: 'app-compo
     this.ClassText='OutFocus';
   }
 
-TextName:string ='...';
+TextName:string ='';
+TextDifferent:string='';
+Resault:Number=0;
+ShowRes:boolean=false;
+Mosavi(t1,t2,ob){
+  t1=Number(t1);
+  t2=Number(t2);
+  if (ob=='+') {
+    this.Resault=t1+t2;
+  }
+  else if (ob=='-') {
+    this.Resault=t1-t2;
+  }
+  else if (ob=='*') {
+    this.Resault=t1*t2;
+  }
+  else if (ob=='/') {
+    this.Resault=t1/t2;
+  }
+  this.ShowRes=true;
+}
 
+Taghir(){
+  this.ShowRes=false;
+}
   constructor() {}
     ngOnInit() {}
 }
