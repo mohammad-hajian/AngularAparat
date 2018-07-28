@@ -56,8 +56,8 @@ export class ComponentTest1Component implements OnInit {
     blue : Number = 0;
 
     Objects=[];
-    constructor(private service1:ObjectsService) {
-        this.Objects=service1.DataList();
+    constructor(private service1:ObjectsService) {}
+    ngOnInit() {
+        this.Objects=this.service1.DataList();
     }
-    ngOnInit() {}
 }
