@@ -23,6 +23,7 @@ body {
   height: 100px;
   width: 100px;
   border-radius: 50px;
-  margin-left: 50%;
+   margin-left: 50%; 
   margin-top: 20px;
+  position: relative;
 }

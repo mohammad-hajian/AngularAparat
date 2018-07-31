@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import { ObjectsService } from '../../Services/objects.service';
-@Component({selector: 'app-component-test1', templateUrl: './component-test1.component.html', styleUrls: ['./component-test1.component.css']})
+@Component({selector: 'app-component-test1',
+ templateUrl: './component-test1.component.html',
+ styleUrls: ['./component-test1.component.css']})
 export class ComponentTest1Component implements OnInit {
 
     Is_Ok = false;
